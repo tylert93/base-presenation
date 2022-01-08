@@ -8,7 +8,7 @@ import {
   widthClasses,
 } from './styles';
 
-const baseUnit = require('shared/tailwind/theme/baseUnit');
+const baseUnit = require('@src/../theme/baseUnit');
 
 const defaultElement = 'div';
 

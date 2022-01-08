@@ -4,19 +4,26 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
 
 const exampleCode = `
-(function someDemo() {
-  var test = "Hello World!";
-  console.log(test);
-})();
+import React, { FC } from 'react';
 
-return () => <App />;
+const ExampleComponent: FC = ({ children }) => {
+
+  return (
+    <div>
+      {children}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+
 `.trim();
 
 const Code = () => (
   <Highlight {...defaultProps} code={exampleCode} language="tsx" theme={theme}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <pre
-        className={clsx('text-left my-2 mx-0 p-3 leading-5 rounded', className)}
+        className={clsx('text-left m-0 p-3 leading-5 rounded', className)}
         style={style}
       >
         {tokens.map((line, i) => (
