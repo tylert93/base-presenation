@@ -26,15 +26,4 @@ npm run check-types ||
 
 # If everything passes... Now we can commit
 echo 'All checks PASSED.' 
-echo 'Attempting build...'
-
-npm run build ||
-(
-    echo 'Build FAILED. 
-    '
-    false;
-)
-
-# If everything passes... Now we can commit
-echo 'Build COMPLETE'
 echo 'Commiting changes...'
