@@ -16,7 +16,7 @@ const Code = () => (
   <Highlight {...defaultProps} code={exampleCode} language="tsx" theme={theme}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <pre
-        className={clsx('text-left my-2 mx-0 p-1 leading-5', className)}
+        className={clsx('text-left my-2 mx-0 p-3 leading-5 rounded', className)}
         style={style}
       >
         {tokens.map((line, i) => (

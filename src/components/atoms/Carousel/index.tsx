@@ -13,7 +13,11 @@ import PrevArrow from '@src/components/icons/PrevArrow';
 import colors from '@src/utils/colors';
 import clsx from 'clsx';
 
-const Carousel: FC<{ className: string }> = ({ className, children }) => {
+const Carousel: FC<{ className?: string; arrows?: boolean }> = ({
+  arrows = false,
+  className,
+  children,
+}) => {
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -68,24 +72,26 @@ const Carousel: FC<{ className: string }> = ({ className, children }) => {
         </div>
       </div>
 
-      <div className="absolute top-4 right-4">
-        <IconButton
-          onClick={scrollPrev}
-          disabled={!prevBtnEnabled}
-          className="p-0.75 mr-1 hover:!bg-primary-main outline-none"
-        >
-          <PrevArrow height={20} width={20} color={colors.common.white} />
-        </IconButton>
-        <IconButton
-          onClick={scrollNext}
-          disabled={!nextBtnEnabled}
-          className="p-0.75 hover:!bg-primary-main outline-none"
-        >
-          <NextArrow height={20} width={20} color={colors.common.white} />
-        </IconButton>
-      </div>
+      {arrows && (
+        <div className="absolute top-4 right-4">
+          <IconButton
+            onClick={scrollPrev}
+            disabled={!prevBtnEnabled}
+            className="p-0.75 mr-1 hover:!bg-primary-main outline-none"
+          >
+            <PrevArrow height={20} width={20} color={colors.common.white} />
+          </IconButton>
+          <IconButton
+            onClick={scrollNext}
+            disabled={!nextBtnEnabled}
+            className="p-0.75 hover:!bg-primary-main outline-none"
+          >
+            <NextArrow height={20} width={20} color={colors.common.white} />
+          </IconButton>
+        </div>
+      )}
 
-      <div className="absolute bottom-5 left-50% transform -translate-x-50%">
+      <div className="absolute bottom-2 left-50% transform -translate-x-50%">
         <Dots
           scrollSnaps={scrollSnaps}
           scrollTo={scrollTo}

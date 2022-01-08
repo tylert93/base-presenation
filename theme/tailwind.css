@@ -44,23 +44,7 @@
 }
 
 @layer components {
-  .g-elevation-0 {
-    box-shadow: 0px 0px 0px;
-  }
-
-  .g-elevation-1 {
-    box-shadow: 0px 4px 8px rgb(0 0 0 / 12%);
-  }
-
-  .g-elevation-2 {
-    box-shadow: 0px 4px 16px rgb(0 0 0 / 16%);
-  }
-
-  .g-elevation-3 {
-    box-shadow: 0px 4px 24px rgb(0 0 0 / 24%);
-  }
-
-  .g-elevation-4 {
-    box-shadow: 0px 4px 32px rgb(0 0 0 / 32%);
+  html {
+    @apply text-common-white;
   }
 }
