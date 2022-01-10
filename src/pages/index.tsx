@@ -6,6 +6,22 @@ import Flex from '@src/components/atoms/Flex';
 import Typography from '@src/components/atoms/Typography';
 import HyperGrid from '@src/components/atoms/HyperGrid';
 
+const exampleCode = `
+import React, { FC } from 'react';
+
+const ExampleComponent: FC = ({ children }) => {
+
+  return (
+    <div>
+      {children}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+
+`;
+
 const EmblaCarousel = () => {
   return (
     <Carousel className="h-[100vh] w-[100vw]">
@@ -31,7 +47,7 @@ const EmblaCarousel = () => {
             </Typography>
           </HyperGrid>
           <HyperGrid item xs className="mt-4">
-            <Code />
+            <Code snippet={exampleCode} />
           </HyperGrid>
         </HyperGrid>
       </Slide>
